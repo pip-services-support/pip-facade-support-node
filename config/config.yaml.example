@@ -1,0 +1,58 @@
+---
+# Container info
+- descriptor: "pip-services-container:container-info:default:default:*"
+  name: "pip-vault-us1-alpha"
+  description: "Client facade for Pip.Vault US1"
+
+# Console logger
+- descriptor: "pip-services-commons:logger:console:default:*"
+  level: trace
+
+# Log counters
+- descriptor: "pip-services-commons:counters:log:default:*"
+
+# Discovery service
+- descriptor: "pip-services-commons:discovery:memory:default:*"
+  mongodb: uri=mongodb://localhost/test
+
+# Credential store
+- descriptor: "pip-services-commons:credential-store:memory:default:*"
+  mongodb: username=;password=
+
+########### Product support components ###########
+
+# Announcements components
+- descriptor: "pip-services-announcements:persistence:mongodb:default:*"
+  connection:
+    discovery_key: mongodb
+- descriptor: "pip-services-announcements:controller:default:default:*"
+- descriptor: "pip-services-announcements:client:direct:default:*"
+
+# Feedbacks components
+- descriptor: "pip-services-feedbacks:persistence:mongodb:default:*"
+  connection:
+    discovery_key: mongodb
+- descriptor: "pip-services-feedbacks:controller:default:default:*"
+- descriptor: "pip-services-feedbacks:client:direct:default:*"
+
+################ REST API Routes ##############
+
+# Main facade service
+- descriptor: "pip-services-facade:service:main:default:*"
+  root_path: ""
+  connection:
+    protocol: "http"
+    host: "0.0.0.0"
+    port: 8080
+  options:
+    debug: true
+    maintenance_enabled: false
+    max_req_size: "1mb"
+
+# Version 1 facade service
+- descriptor: "pip-services-facade:service:test:api-1.0:*"
+  root_path: "/api/1.0"
+
+# Pip.Services Operations
+- descriptor: "pip-facade-support:operations:announcements:default:1.0"
+- descriptor: "pip-facade-support:operations:feedbacks:default:1.0"

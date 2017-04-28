@@ -1,0 +1,1 @@
+export { SupportFacadeFactory } from './SupportFacadeFactory';
