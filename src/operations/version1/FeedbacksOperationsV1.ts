@@ -86,7 +86,7 @@ export class FeedbacksOperationsV1  extends FacadeOperations {
         let feedbackId = req.route.params.feedback_id;
         let body = req.body || {};
         let user = req.user;
-        let reply = body.reply ? body.reply : '' + body;
+        let reply = _.isString(body) ? body : '' + body.reply;
 
         this._feedbacksClient.replyFeedback(
             null, feedbackId, reply, user , this.sendResult(req, res)
