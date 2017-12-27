@@ -12,13 +12,13 @@
     "main": "./obj/src/index.js",
     "typings": "./obj/src/index.d.ts",
     "keywords": [
-        "pip.services", 
+        "pip.services",
         "product support",
         "rest api",
         "client facade"
     ],
     "noAnalyze": true,
-    "repository" : {
+    "repository": {
         "type": "git",
         "url": "ssh://git@github.com:pip-services-support/pip-facade-support-node.git"
     },
@@ -37,7 +37,6 @@
         "pip-services-container-node": "^2.0.0",
         "pip-services-net-node": "^2.0.0",
         "pip-services-facade-node": "^1.1.0",
-
         "pip-clients-announcements-node": "git+ssh://git@github.com:pip-services-support/pip-clients-announcements-node.git",
         "pip-clients-feedbacks-node": "git+ssh://git@github.com:pip-services-support/pip-clients-feedbacks-node.git"
     },
@@ -51,7 +50,6 @@
         "chai": "*",
         "matcha": "*",
         "restify": "4.3.0",
-
         "pip-services-announcements-node": "git+ssh://git@github.com:pip-services-support/pip-services-announcements-node.git",
         "pip-services-feedbacks-node": "git+ssh://git@github.com:pip-services-support/pip-services-feedbacks-node.git"
     }

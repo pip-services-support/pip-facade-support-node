@@ -54,8 +54,9 @@ class FeedbacksOperationsV1 extends pip_services_facade_node_1.FacadeOperations 
     }
     replyFeedback(req, res) {
         let feedbackId = req.route.params.feedback_id;
-        let reply = req.body || "";
+        let body = req.body || {};
         let user = req.user;
+        let reply = body.reply ? body.reply : '' + body;
         this._feedbacksClient.replyFeedback(null, feedbackId, reply, user, this.sendResult(req, res));
     }
     deleteFeedback(req, res) {

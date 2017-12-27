@@ -84,12 +84,12 @@ export class FeedbacksOperationsV1  extends FacadeOperations {
 
     private replyFeedback(req: any, res: any): void {
         let feedbackId = req.route.params.feedback_id;
-        let reply = req.body || {};
+        let body = req.body || {};
         let user = req.user;
-        let response = reply.response ? reply.response : reply.toString();
+        let reply = body.reply ? body.reply : '' + body;
 
         this._feedbacksClient.replyFeedback(
-            null, feedbackId, reply, user , this.sendResult(req, response)
+            null, feedbackId, reply, user , this.sendResult(req, res)
         );
     }
 
