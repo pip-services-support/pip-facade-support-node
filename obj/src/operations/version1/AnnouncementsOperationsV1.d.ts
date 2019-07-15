@@ -10,10 +10,10 @@ export declare class AnnouncementsOperationsV1 extends FacadeOperations {
     createAnnouncementOperation(): (req: any, res: any) => void;
     updateAnnouncementOperation(): (req: any, res: any) => void;
     deleteAnnouncementOperation(): (req: any, res: any) => void;
-    private getAnnouncements;
-    private getRandomAnnouncement;
-    private getAnnouncement;
-    private createAnnouncement;
-    private updateAnnouncement;
-    private deleteAnnouncement;
+    private getAnnouncements(req, res);
+    private getRandomAnnouncement(req, res);
+    private getAnnouncement(req, res);
+    private createAnnouncement(req, res);
+    private updateAnnouncement(req, res);
+    private deleteAnnouncement(req, res);
 }

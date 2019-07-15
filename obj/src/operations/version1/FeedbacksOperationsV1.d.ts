@@ -9,9 +9,9 @@ export declare class FeedbacksOperationsV1 extends FacadeOperations {
     sendFeedbackOperation(): (req: any, res: any) => void;
     replyFeedbackOperation(): (req: any, res: any) => void;
     deleteFeedbackOperation(): (req: any, res: any) => void;
-    private getFeedbacks;
-    private getFeedback;
-    private sendFeedback;
-    private replyFeedback;
-    private deleteFeedback;
+    private getFeedbacks(req, res);
+    private getFeedback(req, res);
+    private sendFeedback(req, res);
+    private replyFeedback(req, res);
+    private deleteFeedback(req, res);
 }
